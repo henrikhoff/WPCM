@@ -52,7 +52,6 @@ $wpcm_db_version = "1.0";
 
 
 
-
 //Plugin Settings and Administration	
 add_action('admin_menu', 'WPCM_options_menu');
 

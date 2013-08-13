@@ -1,0 +1,14 @@
+/*Stylesheet for WordPress Course Manager plugin*/
+
+/*DIV that contains the image of a lecturer*/
+#WPCM_lecturer_image {
+	width: 150px;
+	float: right;
+	margin: 0 0 1em 1em;
+
+}
+
+#WPCM_lecturer_image img {
+	width: 100%;
+	border: none;
+}
