@@ -239,6 +239,7 @@ function get_schedule($course_id="future"){
 	
 	}
 	
+//Get a single scheduled event
 function get_event($id) {
 	global $wpdb;
 	global $schedule_table_name;
@@ -291,33 +292,32 @@ function set_schedule($event) {
 	
 	return $id;
 
-	
-	
 }
 
-
-function get_forelasares_forelasningar($forelasare_id)
+//Get the courses that a specific lecturer holds
+function get_lecturers_courses($lecturer_id)
 {
-	$table_name_4 = $wpdb->prefix . "wpcm_schedule";
-	db_connect();
+	global $wpdb;
+	global $lecturer_table_name;
+	global $course_table_name;
+	global $course_holders_table_name;
 	
-	$query="SELECT * FROM forelasningshallare WHERE forelasare_id = $forelasare_id";
-
-	$result = mysql_query($query); 
+	$query="SELECT * FROM $course_holders_table_name WHERE lecturers_id = $lecturer_id";	
+		
+	$result = $wpdb->get_results($query);
+	//echo $query;	
+	//print_r($result);
 	
-	mysql_close();
-
-	$f_result = extract_result_data($result);
-	
-	/*echo "debug: ".$f_result[0][1]."<br>";*/	
+	/*echo "debug: ".$result[0][1]."<br>";*/	
 	
 	$my_result = array();
+	$temp_result = array();
 	$i=0;
-	foreach ($f_result as $forelasning)
+	foreach ($result as $course)
 	{
-		/*echo $forelasning[2].", ";*/
-		$result=get_forelasningar($forelasning[2]);
-		$my_result[$i] = $result[0];
+		/*echo $course[2].", ";*/
+		$temp_result=get_courses($course->courses_id);
+		$my_result[$i] = $temp_result[0];
 		$i++;
 	}
 
@@ -326,23 +326,6 @@ function get_forelasares_forelasningar($forelasare_id)
 
 }
 
-function get_tillfallen($f_id="alla")
-{
-	db_connect();
-	
-	if($f_id == "alla")
-		$query="SELECT * FROM tillfalle WHERE datum>=CURDATE()";
-	else
-		$query="SELECT * FROM tillfalle WHERE forelasning_id=$f_id AND datum>=CURDATE()";
-		
-	$result = mysql_query($query); 
-	
-	mysql_close();
 
-	$my_result = extract_result_data($result);
-
-	return $my_result;
-
-}
 
 ?>

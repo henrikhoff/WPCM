@@ -37,6 +37,8 @@ include_once 'wpcm_plugin_options.php';
 include_once 'wpcm_edit_lecturers.php'; 
 include_once 'wpcm_edit_courses.php';
 include_once 'wpcm_edit_schedule.php';
+
+//Plugin front-end features:
 include_once 'wpcm_front-end.php';
 
 
@@ -57,10 +59,9 @@ function register_plugin_styles() {
 	wp_enqueue_style( 'WPCM_css' );
 }
 
-
 // Register style sheet.
 add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
-s
+
 //Plugin Settings and Administration	
 add_action('admin_menu', 'WPCM_options_menu');
 
