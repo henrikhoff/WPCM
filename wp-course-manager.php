@@ -49,9 +49,18 @@ register_activation_hook(__FILE__,'wpcm_install');
 global $wpcm_db_version;
 $wpcm_db_version = "1.0";
 
+/**
+ * Register style sheet.
+ */
+function register_plugin_styles() {
+	wp_register_style( 'WPCM_css', plugins_url( 'WPCourseManager/WPCM.css'));
+	wp_enqueue_style( 'WPCM_css' );
+}
 
 
-
+// Register style sheet.
+add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
+s
 //Plugin Settings and Administration	
 add_action('admin_menu', 'WPCM_options_menu');
 

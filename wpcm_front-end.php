@@ -1,16 +1,5 @@
 <?PHP
 
-/**
- * Register style sheet.
- */
-function register_plugin_styles() {
-	wp_register_style( 'WPCM_user_css', plugins_url( 'WPCourseManager/WPCM.css'));
-	wp_enqueue_style( 'WPCM_user_css' );
-}
-
-// Register style sheet.
-add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
-
 
 //Triggered by shortcode wpcm_lecturers (defined in wp-course-manager.php)
 function WPCM_list_lecturers($content=null) {
