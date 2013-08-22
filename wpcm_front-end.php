@@ -12,7 +12,7 @@ function text2html($text)
 
 //Triggered by shortcode wpcm_lecturers (defined in wp-course-manager.php)
 function WPCM_list_lecturers($content=null) {
-	$lecturer = $_REQUEST['lecturer'];	
+	$lecturer = $_REQUEST['id'];	
 	
 	if ($lecturer) {
 		$output = WPCM_show_one_lecturer($lecturer);
@@ -31,7 +31,7 @@ function WPCM_list_all_lecturers() {
 	$output .= "<ul>";
 	
 	foreach ($lecturers as $l) {
-		$output .= "<li><a href='?lecturer=$l->id'>$l->name</a></li>";		
+		$output .= "<li><a href='?id=$l->id'>$l->name</a></li>";		
 		
 		}
 
@@ -42,8 +42,11 @@ function WPCM_list_all_lecturers() {
 	}
 	
 function WPCM_show_one_lecturer($id) {
+	
 	$lecturers = get_lecturers($id);
 	$courses = get_lecturers_courses($id);
+	
+	$courses_page = get_option('wpcm_course_page');
 	
 	$name = stripslashes($lecturers[0]->name);
 	$image = $lecturers[0]->image;
@@ -65,12 +68,23 @@ function WPCM_show_one_lecturer($id) {
 	$output .= "</div>";
 	
 	$output .= "<h3>".__("Courses")."</h3>";
-	$output .= "<p>" . $name . " " . __("holds the following courses:") ."</p>";
+	$output .= "<p>" . $name . " " . __("holds the following courses:"). $courses_page ."</p>";
 	$output .= "<ul>";
-	foreach ($courses as $course)
+	if($courses_page != '')
 	{
-		$output .= "<li><a href=\"?course=$course->id\" title=\"$course->title\">$course->title</a></li>";
+			foreach ($courses as $course)
+			{
+				$output .= "<li><a href=\"".$courses_page."?id=$course->id\" title=\"$course->title\">$course->title</a></li>";
+			}
 	}
+	else
+	{
+			foreach ($courses as $course)
+			{
+				$output .= "<li>$course->title</li>";
+			}
+	}
+
 	$output .= "</ul>";
 	
 	$output .= "</div>";	
