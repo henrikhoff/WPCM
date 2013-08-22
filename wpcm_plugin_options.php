@@ -20,26 +20,29 @@ function WPCM_plugin_options() {
 		wp_die( __('You do not have sufficient permissions to access this page.') );
 	}
 
-	$lecturer_page = $_REQUEST['lecturer_page'];
-	$course_page = $_REQUEST['course_page'];
-	$schedule_page = $_REQUEST['schedule_page'];
+	echo '<div class="WPCM_manager_wrap">';
+	echo '<h2>'.__('WordPress Course Manager').'</h2>';
 	
-	echo $lecturer_page.$course_page.$schedule_page;
-	
-	if ( $lecturer_page != '' || $course_page != '' || $schedule_page != '')
+	if (isset($_REQUEST['lecturer_page']) || isset($_REQUEST['course_page']) || isset($_REQUEST['schedule_page']) )
 	{
-		echo '<p>minst ett värde är inte tomt</p>';
+		$lecturer_page = $_REQUEST['lecturer_page'];
+		$course_page = $_REQUEST['course_page'];
+		$schedule_page = $_REQUEST['schedule_page'];
+
 		update_option('wpcm_lecturer_page',$lecturer_page);
 		update_option('wpcm_course_page',$course_page);
-		update_option('wpcm_schedule_page',$schedule_page);	
+		update_option('wpcm_schedule_page',$schedule_page);
+
+		echo '<p class="information">Options saved!</p>';
+
 	}
+
 
 	$lecturer_page = get_option('wpcm_lecturer_page');
 	$course_page = get_option('wpcm_course_page');
 	$schedule_page = get_option('wpcm_schedule_page');
-
-	echo '<div class="WPCM_manager_wrap">';
-	echo '<h2>'.__('WordPress Course Manager').'</h2>';
+	
+	
 	echo '<p>'.__('To manage the plugin content, use the links under WP Course Manager in the menu to the left.').'</p>';
 	
 	$all_pages = get_pages();
