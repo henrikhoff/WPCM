@@ -68,8 +68,12 @@ function WPCM_show_one_lecturer($id) {
 	$output .= "</div>";
 	
 	$output .= "<h3>".__("Courses")."</h3>";
-	$output .= "<p>" . $name . " " . __("holds the following courses:"). $courses_page ."</p>";
+	$output .= "<p>" . $name . " " . __("holds the following courses:") ."</p>";
 	$output .= "<ul>";
+	
+	//$courses_page holds the short-hand url to the page where the shortcode for the courses is placed. 
+	//This is saved with set_option() in the plugin settings, and if that setting is not set by the user, 
+	//this value will be empty. In that case, we will not create any links to the courses.
 	if($courses_page != '')
 	{
 			foreach ($courses as $course)
