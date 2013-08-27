@@ -214,7 +214,7 @@ function delete_course($id) {
 //Get the schedule for 
 //future == all future scheduled events
 //admin == all scheduled events
-//$id == all scheduled events from a specific course
+//$id == all future scheduled events from a specific course
 
 //To get info about one specific scheduled event, use get_event($id)
 
