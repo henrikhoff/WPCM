@@ -12,3 +12,13 @@
 	width: 100%;
 	border: none;
 }
+
+.WPCM_courses .WPCM_course_holder {
+	float: left;
+   margin: 0 0.5em 1em 0;
+   text-align: center;
+}
+
+.WPCM_courses .WPCM_course_holder img {
+	height: 80px;
+}
