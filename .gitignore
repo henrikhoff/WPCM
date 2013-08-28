@@ -1,2 +1,3 @@
 # ignore auto save files
 *~
+/nbproject/private/
