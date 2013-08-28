@@ -145,28 +145,10 @@ function WPCM_show_one_course($id) {
 	
 	$output .= "<h2>".$course[0]->title."</h2>";
 	$output .= "<div class='WPCM_course_ingress'><p>".$short_descr."</p></div>";
-	
-	$output .= "<h3>".__('Lecturers')."</h3>";
-	
-	foreach ( $lecturers as $lecturer)
-	{
-		$output .= "<div class='WPCM_course_holder'>";
-		$output .= "<a href='".$lecturer_page."?id=".$lecturer->id."'>";
-		$output .= "<img src='".$lecturer->image."' alt='".stripslashes($lecturer->name)."' /><br/>";
-		$output .= stripslashes($lecturer->name)."</a>";
-		$output .= "</div>";
-	}
-	 
-	
-	$output .= "<h3>".__('Description')."</h3>";
-	$output .= "<div class='WPCM_course_description'><p>".$description."</p></div>";
-
-	$output .= "<h3>".__('Target group')."</h3>";	
-	$output .= "<p class='WPCM_course_target'>".$target."</p>";
-	
-	$output .= "<h3>".__('Dates')."</h3>";
+    
+    $output .= "<div class='WPCM_course_dates'>";
+    $output .= "<h3>".__('Dates')."</h3>";
 	$output .= "<ul>";
-	
 	if (isset($dates[0]))
 	{
 		foreach ( $dates as $date )
@@ -179,10 +161,32 @@ function WPCM_show_one_course($id) {
 	{
 		$output .= "<li>".__('No scheduled dates for this course')."</li>"; 	
 	}
-	
-	
-	
 	$output .= "</ul>";	
+    $output .= "</div>";
+    
+	$output .= "<div class='WPCM_course_lecturers'>";
+	$output .= "<h3>".__('Lecturers')."</h3>";
+	
+	foreach ( $lecturers as $lecturer)
+	{
+		$output .= "<div class='WPCM_course_holder'>";
+		$output .= "<a href='".$lecturer_page."?id=".$lecturer->id."'>";
+		$output .= "<img src='".$lecturer->image."' alt='".stripslashes($lecturer->name)."' /><br/>";
+		$output .= stripslashes($lecturer->name)."</a>";
+		$output .= "</div>";
+	}
+    $output .= "</div>";
+	 
+	
+	$output .= "<div class='WPCM_course_description'>";
+    $output .= "<h3>".__('Description')."</h3>";
+	$output .= "<p>".$description."</p>";
+    $output .= "</div>";
+
+	$output .= "<div class='WPCM_course_target'>";
+    $output .= "<h3>".__('Target group')."</h3>";	
+	$output .= "<p>".$target."</p>";
+    $output .= "</div>";
 	
 	$output .= "</div>";
 	
