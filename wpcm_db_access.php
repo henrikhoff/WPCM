@@ -230,7 +230,7 @@ function get_schedule($course_id="future"){
 		$query="SELECT * FROM $schedule_table_name ORDER BY date DESC";
 	else
 		//get all scheduled courses from a specific course
-		$query="SELECT * FROM $schedule_table_name WHERE courses_id=$course_id AND date>=CURDATE()";
+		$query="SELECT * FROM $schedule_table_name WHERE courses_id=$course_id AND date>=CURDATE() ORDER BY date, city ASC";
 		
 	$result = $wpdb->get_results($query);
 	//echo $query;	

@@ -153,7 +153,14 @@ function WPCM_show_one_course($id) {
 	{
 		foreach ( $dates as $date )
 		{
-			$output .= "<li>".$date->date. ", ".$date->city."</li>";
+            if ($date->more_info_url != '')
+            {
+                $output .= "<li><a href='".$date->more_info_url."'>".$date->date. ", ".$date->city."</a></li>";
+            }
+            else
+            {
+                $output .= "<li>".$date->date. ", ".$date->city."</li>";
+            }
 		}
 	
 	}
