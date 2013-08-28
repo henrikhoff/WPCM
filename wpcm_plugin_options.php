@@ -19,10 +19,11 @@ function WPCM_plugin_options() {
 	if (!current_user_can('manage_options'))  {
 		wp_die( __('You do not have sufficient permissions to access this page.') );
 	}
+?>
+<div class="WPCM_manager_wrap">
+	<h2><?PHP _e('WordPress Course Manager');?></h2>
 
-	echo '<div class="WPCM_manager_wrap">';
-	echo '<h2>'.__('WordPress Course Manager').'</h2>';
-	
+    <?PHP	
 	if (isset($_REQUEST['lecturer_page']) || isset($_REQUEST['course_page']) || isset($_REQUEST['schedule_page']) )
 	{
 		$lecturer_page = $_REQUEST['lecturer_page'];
@@ -42,64 +43,91 @@ function WPCM_plugin_options() {
 	$course_page = get_option('wpcm_course_page');
 	$schedule_page = get_option('wpcm_schedule_page');
 	
+	?>
+    <div class="WPCM_options_plugin_content_instructions">
+        <h3><?PHP _e('Plugin content');?></h3>
+        <p><?PHP _e('To manage the plugin content, use the links under WP Course Manager in the menu to the left.');?></p>
+    </div>
+    <div class="WPCM_options_plugn_setup_instructions">
+        <h3><?PHP _e('How to use the plugin');?></h3>
+        <p><?PHP _e('To set up the plugin to work as intended, you need to create three pages where the shortcodes will be placed.');?></p>
+   
+        <ul>
+            <li><?PHP _e('One page lists all lecturers, and also displays detailed info about each lecturer. '); _e('Shortcode to put on that page:'); ?> [wpcm_lecturers]</li>
+            <li><?PHP _e('One page lists all courses, and also displays detailed info abou each course. '); _e('Shortcode to put on that page:');?> [wpcm_courses]</li>
+            <li><?PHP _e('One page lists the schedule, i.e. the dates for all planned course opportunities. '); _e('Shortcode to put on that page:');?> [wpcm_schedule]</li>
+        </ul>
+        <p>
+            <?PHP _e('')?>
+        </p>
+    </div>
+    <div class="WPCM_options_section_1">
+        <h3><?PHP _e('Plugin settings');?></h3>
+        <form id="wpcm_options" method="post" action="admin.php?page=<?PHP echo $_GET['page'];?>">
+            <fieldset>
+                <legend><?PHP _e("Select the pages below that are used to display the plugin content.")?></legend>
+                <p>
+                    <label><?PHP _e("Page that displays");?> <strong> <?PHP _e("lecturers");?></strong>: </label>
+                    <select name="lecturer_page">
+                        <option value=""><?PHP _e("Select page");?></option>
 	
-	echo '<p>'.__('To manage the plugin content, use the links under WP Course Manager in the menu to the left.').'</p>';
-	
-	$all_pages = get_pages();
-	
-	echo '<form id="wpcm_options" method="post" action="admin.php?page='. $_GET['page'].'">';
-	echo '<fieldset>';
-	echo '<legend>'.__("Select the pages below that are used to display the plugin content.").'</legend>';	
-	
-	echo '<p><label>'.__("Page that displays").' <strong>' .__("lecturers").'</strong>: </label>';
-	echo '<select name="lecturer_page">';
-	echo '<option value="">'.__("Select page").'</option>';
-	foreach ($all_pages as $page)
-	{
-		$option = '<option value="' . $page->post_name . '" '. ($page->post_name == $lecturer_page ? 'selected' : '') .'>';
-		$option .= $page->post_title;
-		$option .= '</option>';
-		echo $option;
-	}
-	echo '</select>';
-	echo '<br/>'.__("This page should only contain this shortcode: ") . '[wpcm_lecturers]';
-	echo '</p>';
-	
-	echo '<p><label>'.__("Page that displays").' <strong>' .__("courses").'</strong>: </label>';
-	echo '<select name="course_page">';
-	echo '<option value="">'.__("Select page").'</option>';
-	foreach ($all_pages as $page)
-	{
-		$option = '<option value="' . $page->post_name . '" '. ($page->post_name == $course_page ? 'selected' : '') .'>';
-		$option .= $page->post_title;
-		$option .= '</option>';
-		echo $option;
-	}
-	echo '</select>';
-	echo '<br/>'.__("This page should only contain this shortcode: ") . '[wpcm_courses]';
-	echo '</p>';
-	
-	
-	echo '<p><label>'.__("Page that displays").' <strong>' .__("the schedule").'</strong>: </label>';
-	echo '<select name="schedule_page">';
-	echo '<option value="">'.__("Select page").'</option>';
-	foreach ($all_pages as $page)
-	{
-		$option = '<option value="' . $page->post_name . '" '. ($page->post_name == $schedule_page ? 'selected' : '') .'>';
-		$option .= $page->post_title;
-		$option .= '</option>';
-		echo $option;
-	}
-	echo '</select>';
-	echo '<br/>'.__("This page should only contain this shortcode: ") . '[wpcm_schedule]';
-	echo '</p>';
-	
-	
-	echo '<p><button type="submit">'.__("Save").'</button></p>';	
-	
-	echo '</fieldset></form>';
-	echo '</div>';
+                        <?PHP
+                        $all_pages = get_pages();
+                        foreach ($all_pages as $page)
+                        {
+                            $option = '<option value="' . $page->post_name . '" '. ($page->post_name == $lecturer_page ? 'selected' : '') .'>';
+                            $option .= $page->post_title;
+                            $option .= '</option>';
+                            echo $option;
+                        }
+                        ?>
+                    </select>
+                    <br/>
+                    <?PHP _e("This page should only contain this shortcode: ");?>[wpcm_lecturers]
+                </p>
+	            <p>
+                    <label> <?PHP _e("Page that displays");?> <strong> <?PHP _e("courses")?></strong>: </label>
+                    <select name="course_page">
+                        <option value=""><?PHP _e("Select page");?></option>
+                        <?PHP
+                            foreach ($all_pages as $page)
+                            {
+                                $option = '<option value="' . $page->post_name . '" '. ($page->post_name == $course_page ? 'selected' : '') .'>';
+                                $option .= $page->post_title;
+                                $option .= '</option>';
+                                echo $option;
+                            }
+                        ?>
+                    </select>
+                    <br/><?PHP _e("This page should only contain this shortcode: ");?>[wpcm_courses]
+                </p>
 
+                <p>
+                    <label><?PHP _e("Page that displays");?> <strong><?PHP _e("the schedule");?></strong>: </label>
+                    <select name="schedule_page">';
+                        <option value=""><?PHP _e("Select page");?></option>
+                        <?PHP
+                            foreach ($all_pages as $page)
+                            {
+                                $option = '<option value="' . $page->post_name . '" '. ($page->post_name == $schedule_page ? 'selected' : '') .'>';
+                                $option .= $page->post_title;
+                                $option .= '</option>';
+                                echo $option;
+                            }
+                        ?>
+                    </select>
+                    <br/><?PHP _e("This page should only contain this shortcode: ");?>[wpcm_schedule]
+                </p>
+
+                <p>
+                    <button type="submit"><?PHP _e("Save");?></button>
+                </p>
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<?PHP
 }
-
 ?>
