@@ -43,6 +43,26 @@
     padding-left: 0;
 }
 
+th.header { 
+    background-image: url(bg.gif);     
+    cursor: pointer; 
+    font-weight: bold; 
+    background-repeat: no-repeat; 
+    background-position: center left; 
+    padding-left: 20px; 
+    margin-left: -1px; 
+} 
+
+th.headerSortUp { 
+    background-image: url(asc.gif); 
+} 
+
+th.headerSortDown { 
+    background-image: url(desc.gif); 
+} 
+
+
+
 @media (max-width: 600px) {
     .WPCM_course_dates {
         float: none;

@@ -203,9 +203,44 @@ function WPCM_show_one_course($id) {
 
 //Triggered by shortcode wpcm_schedule (defined in wp-course-manager.php)
 function WPCM_list_schedule($content=null){
-	return "ToDo: List the schedule.";
+	    
+    $schedule = get_schedule();
+    $course_page = get_option('wpcm_course_page');	
+    
+    $output = "<div class='WPCM_content WPCM_schedule'>";
+    $output .= "<table id='wpcm_schedule_table'>";
+    $output .= "<thead><tr>";
+    $output .= "<th>".__('Date')."</th><th>".__('Title')."</th><th>".__('City')."</th><th>".__('Venue')."</th><th>".__('Info')."</th>";
+    $output .= "</tr></thead>";
+    $output .= "<tbody>";
+    foreach ( $schedule as $event )
+    {
+        $course = get_courses($event->courses_id);
+        $output .= "<tr>";
+        $output .= "<td>";
+        $output .= $event->date;
+        $output .= "</td>";
+        $output .= "<td>";
+        $output .= "<a href='".$course_page."?id=".$event->courses_id."'>".$course[0]->title."</a>";
+        $output .= "</td>";
+        $output .= "<td>";
+        $output .= $event->city;
+        $output .= "</td>";
+        $output .= "<td>";
+        $output .= $event->venue;
+        $output .= "</td>";
+        $output .= "<td>";
+        $output .= ($event->more_info_url != '' ? "<a href='".$event->more_info_url."'>".__('More information')."</a>" : '');
+        $output .= "</td>";
+        $output .= "</tr>";
+    }
+    $output .= "</tbody></table>";
+    
+    $output .= "</div>";
+    
+    return $output;
 	
-	}
+}
 	
 	
 ?>

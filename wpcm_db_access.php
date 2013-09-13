@@ -224,7 +224,7 @@ function get_schedule($course_id="future"){
 	
 	if($course_id == "future")
 		//get all future scheduled courses
-		$query="SELECT * FROM $schedule_table_name WHERE date>=CURDATE()";
+		$query="SELECT * FROM $schedule_table_name WHERE date>=CURDATE() ORDER BY date, city ASC";
 	else if($course_id=="admin")		
 		//get all schedules courses
 		$query="SELECT * FROM $schedule_table_name ORDER BY date DESC";

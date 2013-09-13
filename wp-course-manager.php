@@ -52,6 +52,20 @@ global $wpcm_db_version;
 $wpcm_db_version = "1.0";
 
 /**
+ * Register javascript filed
+ */
+function register_plugin_scripts() {
+    wp_register_script('tablesorter', plugins_url('WPCourseManager/jquery.tablesorter.js'), array( 'jquery' ));
+    wp_register_script('WPCM_scripts', plugins_url('WPCourseManager/wpcm_scripts.js'), array( 'jquery', 'tablesorter' ));
+    wp_enqueue_script('tablesorter');
+    wp_enqueue_script('WPCM_scripts');
+}
+
+//Register javascripts
+add_action( 'wp_enqueue_scripts', 'register_plugin_scripts' );
+
+
+/**
  * Register style sheet.
  */
 function register_plugin_styles() {
