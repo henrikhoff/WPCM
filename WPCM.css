@@ -44,7 +44,7 @@
 }
 
 th.header { 
-    background-image: url(bg.gif);     
+    background-image: url(images/unsorted.gif);     
     cursor: pointer; 
     font-weight: bold; 
     background-repeat: no-repeat; 
@@ -54,14 +54,60 @@ th.header {
 } 
 
 th.headerSortUp { 
-    background-image: url(asc.gif); 
+    background-image: url(images/asc.gif); 
 } 
 
 th.headerSortDown { 
-    background-image: url(desc.gif); 
-} 
+    background-image: url(images/desc.gif); 
+}
 
+.WPCM_schedule {
+    position: relative;
+}
 
+#WPCM_schedule_table tr {
+    cursor: pointer;
+}
+
+#WPCM_schedule_details {
+    
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 90%;
+    margin-left: -45%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    padding: 2em;
+}
+
+#WPCM_schedule_details #WPCM_schedule_details_close_button {
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -5px;
+    right: -5px;
+    padding: 0;
+    background-image: url(images/close_button_20.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#WPCM_schedule_details h3, #WPCM_schedule_details h4 {
+    margin: 0;
+}
+
+    
+#WPCM_schedule_details_date, #WPCM_schedule_details_place {
+    width: 50%;
+    float: left;
+}
 
 @media (max-width: 600px) {
     .WPCM_course_dates {
@@ -69,4 +115,22 @@ th.headerSortDown {
         width: 100%;
         margin: inherit;
     }
+    
+    .WPCM_schedule {
+        position: static;
+    }
+    
+    #WPCM_schedule_details {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 98%;
+    margin-left: -49%;
+    padding: 1em;
+}
+    
+    #WPCM_schedule_details_date, #WPCM_schedule_details_place {
+    width: 100%;
+    float: none;
+}
 }

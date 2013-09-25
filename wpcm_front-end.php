@@ -208,29 +208,56 @@ function WPCM_list_schedule($content=null){
     $course_page = get_option('wpcm_course_page');	
     
     $output = "<div class='WPCM_content WPCM_schedule'>";
-    $output .= "<table id='wpcm_schedule_table'>";
+    
+    $output .= "<div id='WPCM_schedule_details'>";
+    $output .= "<div id='WPCM_schedule_details_close_button'> </div>";
+    $output .= "<div id='WPCM_schedule_details_date'><h4>".__("Date")."</h4><p>1970-01-01</p></div>";
+    $output .= "<div id='WPCM_schedule_details_place'><h4>".__("City and venue")."</h4><p>Storstad, Grand hotell</div>";
+    $output .= "<h3 id='WPCM_schedule_details_title'>Course title</h3>";
+    $output .= "<div id='WPCM_schedule_details_descr'><p>Course short description</p></div>";
+    $output .= "<div id='WPCM_schedule_details_more_info'><p>";
+    $output .= __("More information about this event is ")."<a href='#'>".__("available here")."</a>";
+    $output .= "</p></div>";
+/*
+ * ***
+ * ToDo: Implement options for registration e-mail address in plugin settings
+ *  $output .= "<div id='WPCM_schedule_details_register'><h3>".__("Register")."</h3>";
+    $output .= "<p>";
+    $output .= __("Register for this event by ");
+    $output .= "<a href='#'>".__("clicking here")."</a>".__(" to send us an e-mail.");
+    $output .= "</p>";
+    $output .= "</div>";
+ * 
+ * ***
+ */
+    $output .= "</div>";
+    
+    $output .= "<table id='WPCM_schedule_table'>";
     $output .= "<thead><tr>";
-    $output .= "<th>".__('Date')."</th><th>".__('Title')."</th><th>".__('City')."</th><th>".__('Venue')."</th><th>".__('Info')."</th>";
+    $output .= "<th>".__('Date')."</th><th>".__('Title')."</th><th>".__('City')."</th>";
     $output .= "</tr></thead>";
     $output .= "<tbody>";
     foreach ( $schedule as $event )
     {
         $course = get_courses($event->courses_id);
-        $output .= "<tr>";
+        $output .= "<tr ";
+        $output .= "data-eventid='".$event->id."' ";
+        $output .= "data-eventdate='".$event->date."' ";
+        $output .= "data-eventcity='".$event->city."' ";
+        $output .= "data-eventvenue='".$event->venue."' ";
+        $output .= "data-eventurl='".$event->more_info_url."' ";
+        $output .= "data-eventcourseid='".$event->courses_id."' ";
+        $output .= "data-eventcoursetitle='".$course[0]->title."' ";
+        $output .= "data-eventcoursedescr='".$course[0]->short_description."' ";
+        $output .= ">";
         $output .= "<td>";
         $output .= $event->date;
         $output .= "</td>";
         $output .= "<td>";
-        $output .= "<a href='".$course_page."?id=".$event->courses_id."'>".$course[0]->title."</a>";
+        $output .= $course[0]->title;
         $output .= "</td>";
         $output .= "<td>";
         $output .= $event->city;
-        $output .= "</td>";
-        $output .= "<td>";
-        $output .= $event->venue;
-        $output .= "</td>";
-        $output .= "<td>";
-        $output .= ($event->more_info_url != '' ? "<a href='".$event->more_info_url."'>".__('More information')."</a>" : '');
         $output .= "</td>";
         $output .= "</tr>";
     }
