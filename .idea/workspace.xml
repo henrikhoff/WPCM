@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4880732e-623f-4772-8541-1d32c7252af0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/asc.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bg.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/desc.gif" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WPCM.css" afterPath="$PROJECT_DIR$/WPCM.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wpcm_front-end.php" afterPath="$PROJECT_DIR$/wpcm_front-end.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wpcm_plugin_options.php" afterPath="$PROJECT_DIR$/wpcm_plugin_options.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wpcm_scripts.js" afterPath="$PROJECT_DIR$/wpcm_scripts.js" />
     </list>
     <ignored path="WP Course Manager.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="4880732e-623f-4772-8541-1d32c7252af0" time="1380099428746" ignored="false" />
-    <file path="/wpcm_scripts.js" changelist="4880732e-623f-4772-8541-1d32c7252af0" time="1380101740746" ignored="false" />
+    <file path="/wpcm_scripts.js" changelist="4880732e-623f-4772-8541-1d32c7252af0" time="1380186002567" ignored="false" />
     <file path="/WPCM.css" changelist="4880732e-623f-4772-8541-1d32c7252af0" time="1380102677066" ignored="false" />
+    <file path="/wpcm_plugin_options.php" changelist="4880732e-623f-4772-8541-1d32c7252af0" time="1380107244765" ignored="false" />
+    <file path="/wpcm_front-end.php" changelist="4880732e-623f-4772-8541-1d32c7252af0" time="1380186233164" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +36,7 @@
       <file leaf-file-name="WPCM.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WPCM.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="42" selection-start="2270" selection-end="2270" vertical-scroll-proportion="0.0">
+            <state line="128" column="17" selection-start="2270" selection-end="2270" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -45,7 +45,25 @@
       <file leaf-file-name="wpcm_scripts.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wpcm_scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="57" selection-start="1103" selection-end="1103" vertical-scroll-proportion="0.31385282">
+            <state line="15" column="105" selection-start="977" selection-end="977" vertical-scroll-proportion="0.34632036">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wpcm_front-end.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wpcm_front-end.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="252" column="132" selection-start="7629" selection-end="7629" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wpcm_plugin_options.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wpcm_plugin_options.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="24" selection-start="1858" selection-end="1858" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -70,7 +88,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/WPCM.css" />
+        <option value="$PROJECT_DIR$/wpcm_plugin_options.php" />
         <option value="$PROJECT_DIR$/wpcm_scripts.js" />
+        <option value="$PROJECT_DIR$/wpcm_front-end.php" />
       </list>
     </option>
   </component>
@@ -193,11 +213,11 @@
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756326" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288948" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288948" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.6724368" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.25565913" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.41677764" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -280,14 +300,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WPCM.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="42" selection-start="2270" selection-end="2270" vertical-scroll-proportion="0.0">
+        <state line="128" column="17" selection-start="2270" selection-end="2270" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wpcm_plugin_options.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="24" selection-start="1858" selection-end="1858" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wpcm_front-end.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="252" column="132" selection-start="7629" selection-end="7629" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wpcm_scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="57" selection-start="1103" selection-end="1103" vertical-scroll-proportion="0.31385282">
+        <state line="15" column="105" selection-start="977" selection-end="977" vertical-scroll-proportion="0.34632036">
           <folding />
         </state>
       </provider>
