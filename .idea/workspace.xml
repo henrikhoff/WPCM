@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4880732e-623f-4772-8541-1d32c7252af0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wpcm_front-end.php" afterPath="$PROJECT_DIR$/wpcm_front-end.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wpcm_plugin_options.php" afterPath="$PROJECT_DIR$/wpcm_plugin_options.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wpcm_scripts.js" afterPath="$PROJECT_DIR$/wpcm_scripts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-course-manager.php" afterPath="$PROJECT_DIR$/wp-course-manager.php" />
     </list>
     <ignored path="WP Course Manager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -14,6 +12,8 @@
     <file path="/WPCM.css" changelist="4880732e-623f-4772-8541-1d32c7252af0" time="1380102677066" ignored="false" />
     <file path="/wpcm_plugin_options.php" changelist="4880732e-623f-4772-8541-1d32c7252af0" time="1380107244765" ignored="false" />
     <file path="/wpcm_front-end.php" changelist="4880732e-623f-4772-8541-1d32c7252af0" time="1380186233164" ignored="false" />
+    <file path="/readme.txt" changelist="4880732e-623f-4772-8541-1d32c7252af0" time="1380188761868" ignored="false" />
+    <file path="/wp-course-manager.php" changelist="4880732e-623f-4772-8541-1d32c7252af0" time="1380188804812" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +42,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wpcm_scripts.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="wpcm_scripts.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wpcm_scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="105" selection-start="977" selection-end="977" vertical-scroll-proportion="0.34632036">
+            <state line="26" column="54" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wp-course-manager.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wp-course-manager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="12" selection-start="263" selection-end="263" vertical-scroll-proportion="0.06864989">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readme.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="61" column="0" selection-start="2244" selection-end="2244" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -91,6 +109,8 @@
         <option value="$PROJECT_DIR$/wpcm_plugin_options.php" />
         <option value="$PROJECT_DIR$/wpcm_scripts.js" />
         <option value="$PROJECT_DIR$/wpcm_front-end.php" />
+        <option value="$PROJECT_DIR$/readme.txt" />
+        <option value="$PROJECT_DIR$/wp-course-manager.php" />
       </list>
     </option>
   </component>
@@ -321,7 +341,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wpcm_scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="105" selection-start="977" selection-end="977" vertical-scroll-proportion="0.34632036">
+        <state line="26" column="54" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="0" selection-start="2244" selection-end="2244" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-course-manager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="12" selection-start="263" selection-end="263" vertical-scroll-proportion="0.06864989">
           <folding />
         </state>
       </provider>
