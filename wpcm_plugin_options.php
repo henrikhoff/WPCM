@@ -24,15 +24,17 @@ function WPCM_plugin_options() {
 	<h2><?PHP _e('WordPress Course Manager');?></h2>
 
     <?PHP	
-	if (isset($_REQUEST['lecturer_page']) || isset($_REQUEST['course_page']) || isset($_REQUEST['schedule_page']) )
+	if (isset($_REQUEST['lecturer_page']) || isset($_REQUEST['course_page']) || isset($_REQUEST['schedule_page']) || isset($_REQUEST['registration_address']) )
 	{
 		$lecturer_page = $_REQUEST['lecturer_page'];
 		$course_page = $_REQUEST['course_page'];
 		$schedule_page = $_REQUEST['schedule_page'];
+		$registration_address =  $_REQUEST['registration_address'];
 
 		update_option('wpcm_lecturer_page',$lecturer_page);
 		update_option('wpcm_course_page',$course_page);
 		update_option('wpcm_schedule_page',$schedule_page);
+		update_option('wpcm_registration_address',$registration_address);
 
 		echo '<p class="information">Options saved!</p>';
 
@@ -42,6 +44,7 @@ function WPCM_plugin_options() {
 	$lecturer_page = get_option('wpcm_lecturer_page');
 	$course_page = get_option('wpcm_course_page');
 	$schedule_page = get_option('wpcm_schedule_page');
+	$registration_address = get_option('wpcm_registration_address');
 	
 	?>
     <div class="WPCM_options_plugin_content_instructions">
@@ -117,6 +120,12 @@ function WPCM_plugin_options() {
                         ?>
                     </select>
                     <br/><?PHP _e("This page should only contain this shortcode: ");?>[wpcm_schedule]
+                </p>
+
+                <p>
+                    <label><?PHP _e("E-mail address to be used when registering for a scheduled course event.");?></label>
+                    <input type="email" name="registration_address" value="<?PHP echo $registration_address; ?>" /><br/>
+                    <?PHP _e("Leave blank to disable the registration link in the event details."); ?>
                 </p>
 
                 <p>

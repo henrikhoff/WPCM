@@ -13,6 +13,7 @@ jQuery(document).ready(function()
             jQuery("#WPCM_schedule_details_place p").html(jQuery(this).data("eventcity") + ", " + jQuery(this).data("eventvenue"));
             jQuery("#WPCM_schedule_details_date p").html(jQuery(this).data("eventdate"));
             jQuery("#WPCM_schedule_details_more_info p a").attr("href", jQuery(this).data("eventurl"));
+            jQuery("#WPCM_schedule_details_register p a").attr("href", jQuery(this).data("registrationurl"))
 
             jQuery("#WPCM_schedule_details").show();
             jQuery("#WPCM_schedule_details").css("top", 20);

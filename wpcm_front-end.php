@@ -203,7 +203,8 @@ function WPCM_show_one_course($id) {
 
 //Triggered by shortcode wpcm_schedule (defined in wp-course-manager.php)
 function WPCM_list_schedule($content=null){
-	    
+
+    $registration_address = get_option('wpcm_registration_address');
     $schedule = get_schedule();
     $course_page = get_option('wpcm_course_page');	
     
@@ -218,18 +219,18 @@ function WPCM_list_schedule($content=null){
     $output .= "<div id='WPCM_schedule_details_more_info'><p>";
     $output .= __("More information about this event is ")."<a href='#'>".__("available here")."</a>";
     $output .= "</p></div>";
-/*
- * ***
- * ToDo: Implement options for registration e-mail address in plugin settings
- *  $output .= "<div id='WPCM_schedule_details_register'><h3>".__("Register")."</h3>";
-    $output .= "<p>";
-    $output .= __("Register for this event by ");
-    $output .= "<a href='#'>".__("clicking here")."</a>".__(" to send us an e-mail.");
-    $output .= "</p>";
-    $output .= "</div>";
- * 
- * ***
- */
+
+    if($registration_address !== '')
+    {
+        $output .= "<div id='WPCM_schedule_details_register'><h3>".__("Register")."</h3>";
+        $output .= "<p>";
+        $output .= __("Register for this event by ");
+        $output .= "<a href='#'>".__("clicking here")."</a>.";
+        $output .= "</p>";
+        $output .= "</div>";
+    }
+
+
     $output .= "</div>";
     
     $output .= "<table id='WPCM_schedule_table'>";
@@ -249,6 +250,7 @@ function WPCM_list_schedule($content=null){
         $output .= "data-eventcourseid='".$event->courses_id."' ";
         $output .= "data-eventcoursetitle='".$course[0]->title."' ";
         $output .= "data-eventcoursedescr='".$course[0]->short_description."' ";
+        $output .= "data-registrationurl='mailto:".$registration_address."?subject=".__("Registration for ").$course[0]->title.__(" in ").$event->city."' ";
         $output .= ">";
         $output .= "<td>";
         $output .= $event->date;
