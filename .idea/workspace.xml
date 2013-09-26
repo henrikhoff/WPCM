@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4880732e-623f-4772-8541-1d32c7252af0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.txt" afterPath="$PROJECT_DIR$/readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-course-manager.php" afterPath="$PROJECT_DIR$/wp-course-manager.php" />
-    </list>
+    <list default="true" id="4880732e-623f-4772-8541-1d32c7252af0" name="Default" comment="" />
     <ignored path="WP Course Manager.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="4880732e-623f-4772-8541-1d32c7252af0" time="1380099428746" ignored="false" />
@@ -54,7 +51,7 @@
       <file leaf-file-name="wp-course-manager.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-course-manager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="12" selection-start="263" selection-end="263" vertical-scroll-proportion="0.06864989">
+            <state line="4" column="163" selection-start="100" selection-end="250" vertical-scroll-proportion="0.034324944">
               <folding />
             </state>
           </provider>
@@ -355,7 +352,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-course-manager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="12" selection-start="263" selection-end="263" vertical-scroll-proportion="0.06864989">
+        <state line="4" column="163" selection-start="100" selection-end="250" vertical-scroll-proportion="0.034324944">
           <folding />
         </state>
       </provider>
