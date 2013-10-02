@@ -11,15 +11,17 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WordPress Course Manager - a WordPress Plugin to handle courses, lecturers and a schedule of dates when courses are held with one or more lecturer(s).
 
 == Description ==
-This plugin was developed since I couldn't find any other plugin that provided this functionality, and I needed it for the home page of the Swedish educational company Utbildningsglädje (http://www.utbildningsgladje.nu).
-
-What I needed was to manage lecturers that can hold different courses and create a schedule with courses to be held at different locations.
+WordPress Course Manager - a WordPress Plugin to handle courses, lecturers and a schedule of dates when courses are held with one or more lecturer(s).
 
 The plugin lets you manage:
 
 * Lecturers - Name, biography, picture and homepage url.
 * Courses - Name, description, lecturers
 * Schedule - Course, date, place, url to page/file with more information.
+
+This plugin was developed since I couldn't find any other plugin that provided this functionality, and I needed it for the home page of the Swedish educational company Utbildningsglädje (http://www.utbildningsgladje.nu).
+
+What I needed was to manage lecturers that can hold different courses and create a schedule with courses to be held at different locations.
 
 
 
