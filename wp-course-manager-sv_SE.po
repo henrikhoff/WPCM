@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Course Manager\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-course-manager\n"
-"POT-Creation-Date: 2013-10-02 08:39:01+00:00\n"
+"POT-Creation-Date: 2013-10-02 20:01:02+00:00\n"
+"PO-Revision-Date: 2013-10-02 22:06+0100\n"
+"Last-Translator: Henrik Hoff <henrikln@gmail.com>\n"
+"Language-Team: Henrik Hoff <henrikln@gmail.com>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-10-02 20:54+0100\n"
-"Last-Translator: Henrik Hoff <henrikln@gmail.com>\n"
-"Language-Team: Henrik Hoff <henrikln@gmail.com>\n"
 "X-Generator: Poedit 1.5.4\n"
-"Language: sv\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: wpcm_db_access.php:13
@@ -28,7 +28,7 @@ msgstr "Åtgärden har utförts framgångsrikt."
 msgid "You do not have sufficient permissions to access this page."
 msgstr "Du har inte tillräckligt med rättigheter för att komma åt denna sida."
 
-#. #-#-#-#-#  plugin.pot (WP Course Manager 1.0)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (WP Course Manager 1.1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: wpcm_edit_courses.php:19 wpcm_edit_lecturers.php:19
 #: wpcm_edit_schedule.php:19 wpcm_plugin_options.php:5
@@ -59,29 +59,29 @@ msgstr "Vill du verkligen ta bort kursen?"
 msgid "Delete"
 msgstr "Ta bort"
 
-#: wpcm_edit_courses.php:92 wpcm_edit_courses.php:190
+#: wpcm_edit_courses.php:92 wpcm_edit_courses.php:188
 msgid "Title:"
 msgstr "Titel:"
 
-#: wpcm_edit_courses.php:96 wpcm_edit_courses.php:194
+#: wpcm_edit_courses.php:96 wpcm_edit_courses.php:192
 msgid "Lead Paragraph:"
 msgstr "Ingress:"
 
-#: wpcm_edit_courses.php:100 wpcm_edit_courses.php:198
+#: wpcm_edit_courses.php:100 wpcm_edit_courses.php:196
 msgid "Description: (Make two new-lines for a new paragraph.)"
 msgstr "Beskrivning: (Gör två radbrytningar för att skapa nytt stycke.)"
 
-#: wpcm_edit_courses.php:104 wpcm_edit_courses.php:202
+#: wpcm_edit_courses.php:104 wpcm_edit_courses.php:200
 msgid "Target:"
 msgstr "Målgrupp:"
 
-#: wpcm_edit_courses.php:108 wpcm_edit_courses.php:206
+#: wpcm_edit_courses.php:108 wpcm_edit_courses.php:204
 msgid "Lecturer(s): (use ctrl to select more than one)"
 msgstr "Föreläsare: (använde ctrl för att välja mer än en)"
 
-#: wpcm_edit_courses.php:150 wpcm_edit_courses.php:248
-#: wpcm_edit_lecturers.php:106 wpcm_edit_lecturers.php:161
-#: wpcm_edit_schedule.php:95 wpcm_plugin_options.php:132
+#: wpcm_edit_courses.php:150 wpcm_edit_courses.php:246
+#: wpcm_edit_lecturers.php:106 wpcm_edit_lecturers.php:158
+#: wpcm_edit_schedule.php:93 wpcm_plugin_options.php:132
 msgid "Save"
 msgstr "Spara"
 
@@ -97,12 +97,7 @@ msgstr "Gå tillbaka till alla föreläsare"
 msgid "Deleting course "
 msgstr "Tar bort kurs"
 
-#: wpcm_edit_courses.php:175 wpcm_edit_lecturers.php:131
-#: wpcm_edit_schedule.php:54
-msgid "Done"
-msgstr "Klar"
-
-#: wpcm_edit_courses.php:182
+#: wpcm_edit_courses.php:180
 msgid "Add a new Course"
 msgstr "Lägg till ny kurs"
 
@@ -118,19 +113,19 @@ msgstr "Lägg till föreläsare"
 msgid "Do you really want to delete the lecturer?"
 msgstr "Vill du verkligen ta bort föreläsaren?"
 
-#: wpcm_edit_lecturers.php:91 wpcm_edit_lecturers.php:146
+#: wpcm_edit_lecturers.php:91 wpcm_edit_lecturers.php:143
 msgid "Name:"
 msgstr "Namn:"
 
-#: wpcm_edit_lecturers.php:94 wpcm_edit_lecturers.php:149
+#: wpcm_edit_lecturers.php:94 wpcm_edit_lecturers.php:146
 msgid "Description:"
 msgstr "Beskrivning:"
 
-#: wpcm_edit_lecturers.php:97 wpcm_edit_lecturers.php:152
+#: wpcm_edit_lecturers.php:97 wpcm_edit_lecturers.php:149
 msgid "Home page:"
 msgstr "Hemsida:"
 
-#: wpcm_edit_lecturers.php:100 wpcm_edit_lecturers.php:155
+#: wpcm_edit_lecturers.php:100 wpcm_edit_lecturers.php:152
 msgid "Image:"
 msgstr "Bild:"
 
@@ -138,11 +133,11 @@ msgstr "Bild:"
 msgid "Deleting Lecturer "
 msgstr "Tar bort föreläsare"
 
-#: wpcm_edit_lecturers.php:139
+#: wpcm_edit_lecturers.php:136
 msgid "Add a new Lecturer"
 msgstr "Lägg till ny föreläsare"
 
-#: wpcm_edit_schedule.php:19 wpcm_edit_schedule.php:132
+#: wpcm_edit_schedule.php:19 wpcm_edit_schedule.php:130
 msgid "Manage Schedule"
 msgstr "Hantera schemat"
 
@@ -150,45 +145,49 @@ msgstr "Hantera schemat"
 msgid "Deleting scheduled event for "
 msgstr "Tar bort schemalagt tillfälle för "
 
-#: wpcm_edit_schedule.php:62
+#: wpcm_edit_schedule.php:60
 msgid "Add a new scheduled event"
 msgstr "Lägg till nytt schemalagt tillfälle"
 
-#: wpcm_edit_schedule.php:68
+#: wpcm_edit_schedule.php:66
 msgid "Course"
 msgstr "Kurs"
 
-#: wpcm_edit_schedule.php:81 wpcm_front-end.php:215 wpcm_front-end.php:238
+#: wpcm_edit_schedule.php:79 wpcm_front-end.php:215 wpcm_front-end.php:238
 msgid "Date"
 msgstr "Datum"
 
-#: wpcm_edit_schedule.php:84 wpcm_front-end.php:238
+#: wpcm_edit_schedule.php:82 wpcm_front-end.php:238
 msgid "City"
 msgstr "Stad"
 
-#: wpcm_edit_schedule.php:87
+#: wpcm_edit_schedule.php:85
 msgid "Venue"
 msgstr "Plats"
 
-#: wpcm_edit_schedule.php:90
+#: wpcm_edit_schedule.php:88
 msgid "More info"
 msgstr "Mer info"
 
-#: wpcm_edit_schedule.php:90
+#: wpcm_edit_schedule.php:88
 msgid "url to the PDF file"
 msgstr "url till PDF-filen"
 
-#: wpcm_edit_schedule.php:133
+#: wpcm_edit_schedule.php:131
 msgid "Add Schedule"
 msgstr "Lägg till schematillfälle"
 
-#: wpcm_edit_schedule.php:135
+#: wpcm_edit_schedule.php:133
 msgid "It's only possible to add new or delete scheduled events."
 msgstr ""
 "Det är endast möjligt att lägga till nya eller ta bort schemalagda "
 "tillfällen."
 
-#: wpcm_edit_schedule.php:141
+#: wpcm_edit_schedule.php:139
+msgid "Do you really want to delete the scheduled event?"
+msgstr "Vill du verkligen ta bort det schemalagda tillfället?"
+
+#: wpcm_edit_schedule.php:139
 msgid "Remove"
 msgstr "Ta bort"
 
@@ -413,3 +412,6 @@ msgstr "Henrik Hoff"
 #. Author URI of the plugin/theme
 msgid "http://about.me/henrik.hoff"
 msgstr "http://about.me/henrik.hoff"
+
+#~ msgid "Done"
+#~ msgstr "Klar"
