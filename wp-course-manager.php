@@ -3,7 +3,7 @@
 Plugin Name: WP Course Manager
 Plugin URI: https://github.com/henrikhoff/WPCM
 Description: WordPress Course Manager - a WordPress Plugin to handle courses, lecturers and a schedule of dates when courses are held with one or more lecturer(s).
-Version: 1.1
+Version: 1.2
 Author: Henrik Hoff
 Author URI: http://about.me/henrik.hoff
 License: GPL2
