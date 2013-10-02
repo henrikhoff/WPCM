@@ -6,7 +6,7 @@
 
 function WPCM_edit_schedule() {
 	if (!current_user_can('manage_options'))  {
-		wp_die( __('You do not have sufficient permissions to access this page.') );
+		wp_die( __('You do not have sufficient permissions to access this page.', 'wp-course-manager') );
 	}
 	
 	$action = $_REQUEST['action'];
@@ -16,7 +16,7 @@ function WPCM_edit_schedule() {
 
 	echo '<div class="wrap">';
 
-	echo "<h1>".__('WP Course Manager')." - ".__('Manage Schedule')."</h1>";
+	echo "<h1>".__('WP Course Manager', 'wp-course-manager')." - ".__('Manage Schedule', 'wp-course-manager')."</h1>";
 	
 	if ($action=='update_schedule') {
 		update_schedule($id, $save);
@@ -46,12 +46,12 @@ function remove_schedule($id){
 	$course = get_courses($event->courses_id);
 	$course_title = $course[0]->title;
 	
-	echo "<h2>".__('Deleting scheduled event for ')."<em>".$course_title."</em>, ".stripslashes($event->date)."</h2>";
+	echo "<h2>".__('Deleting scheduled event for ', 'wp-course-manager')."<em>".$course_title."</em>, ".stripslashes($event->date)."</h2>";
 	
 	delete_schedule($id);
 	
 	
-	echo '<p class="information">'.__('Done')."</p>";	
+	echo '<p class="information">'.__('Done', 'wp-course-manager')."</p>";	
 	
 	list_all_schedule();
 	
@@ -59,13 +59,13 @@ function remove_schedule($id){
 }
 
 function add_schedule($save){
-	echo "<h2>".__('Add a new scheduled event')."</h2>";
+	echo "<h2>".__('Add a new scheduled event', 'wp-course-manager')."</h2>";
 ?>
 <form id="add_schedule" name="add_schedule" action="admin.php?page=<?PHP echo $_GET['page']?>" method="post">
 
 <table>
 <tr>
-	<td><?PHP _e('Course');?>:</td><td><select name="courses_id" >
+	<td><?PHP _e('Course', 'wp-course-manager');?>:</td><td><select name="courses_id" >
 		
 	<?PHP
 	$courses = get_courses();
@@ -78,21 +78,21 @@ function add_schedule($save){
 	</td>
 </tr>
 <tr>
-	<td><?PHP _e('Date');?>: (YYYY-MM-DD)</td><td><input type="text" name="date" maxlength="10"/></td>
+	<td><?PHP _e('Date', 'wp-course-manager');?>: (YYYY-MM-DD)</td><td><input type="text" name="date" maxlength="10"/></td>
 </tr>
 <tr>
-	<td><?PHP _e('City');?>:</td><td><input type="text" name="city" maxlength="255"/></td>
+	<td><?PHP _e('City', 'wp-course-manager');?>:</td><td><input type="text" name="city" maxlength="255"/></td>
 </tr>
 <tr>
-	<td><?PHP _e('Venue');?>:</td><td><input type="text" name="venue" maxlength="255"/></td>
+	<td><?PHP _e('Venue', 'wp-course-manager');?>:</td><td><input type="text" name="venue" maxlength="255"/></td>
 </tr>
 <tr>
-	<td><?PHP _e('More info');?> (<?PHP _e('url to the PDF file');?>):</td><td><input type="text" name="more_info_url" maxlength="255"/></td>
+	<td><?PHP _e('More info', 'wp-course-manager');?> (<?PHP _e('url to the PDF file', 'wp-course-manager');?>):</td><td><input type="text" name="more_info_url" maxlength="255"/></td>
 </tr>
 
 </table>
 <input type="hidden" name="save" value="1" />
-<input type="submit" value="<?PHP _e('Save');?>" />
+<input type="submit" value="<?PHP _e('Save', 'wp-course-manager');?>" />
 
 </form>
 
@@ -129,16 +129,16 @@ function list_all_schedule($save=0) {
 	$schedule = get_schedule("admin");
 	
 	
-	echo "<h2>".__('Manage Schedule')."</h2>";
-	echo "<p>+ <a href=\"admin.php?page=".$_GET['page']."&amp;action=add_schedule\">".__('Add Schedule')."</a></p>";
+	echo "<h2>".__('Manage Schedule', 'wp-course-manager')."</h2>";
+	echo "<p>+ <a href=\"admin.php?page=".$_GET['page']."&amp;action=add_schedule\">".__('Add Schedule', 'wp-course-manager')."</a></p>";
 
-	echo "<p>".__("It's only possible to add new or delete scheduled events.")."</p>";
+	echo "<p>".__("It's only possible to add new or delete scheduled events.", 'wp-course-manager')."</p>";
 
 	echo "<table>";
 	foreach ($schedule as $event){
 		$course = get_courses($event->courses_id);
 		$course_title = $course[0]->title; 
-		echo "<tr><td>$course_title</td><td>$event->date,&nbsp;</td><td>$event->city</td><td><a href=\"admin.php?page=".$_GET['page']."&amp;action=remove_schedule&amp;id=".$event->id."\">".__('Remove')."</a></td></tr>";
+		echo "<tr><td>$course_title</td><td>$event->date,&nbsp;</td><td>$event->city</td><td><a href=\"admin.php?page=".$_GET['page']."&amp;action=remove_schedule&amp;id=".$event->id."\">".__('Remove', 'wp-course-manager')."</a></td></tr>";
 		
 		}
 	echo "</table>";

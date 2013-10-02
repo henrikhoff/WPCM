@@ -2,26 +2,26 @@
 
 function WPCM_options_menu() {
 	//Plugin settings page. The Code is below, in this file.
-	add_menu_page(__('WP Course Manager'), __('WP Course Manager'), 'manage_options', 'WPCM_top_options_page', 'WPCM_plugin_options');
+	add_menu_page(__('WP Course Manager', 'wp-course-manager'), __('WP Course Manager', 'wp-course-manager'), 'manage_options', 'WPCM_top_options_page', 'WPCM_plugin_options');
 	
 	//Submenu page to edit Lecturers. The code is in the file wpcm_edit_lecturers.php	
-	add_submenu_page( 'WPCM_top_options_page', __('WP Course Manager - Edit Lecturers'), __('Edit Lecturers'), 'manage_options', 'WPCM_edit_lecturers', 'WPCM_edit_lecturers');
+	add_submenu_page( 'WPCM_top_options_page', __('WP Course Manager - Edit Lecturers', 'wp-course-manager'), __('Edit Lecturers', 'wp-course-manager'), 'manage_options', 'WPCM_edit_lecturers', 'WPCM_edit_lecturers');
 
 	//Submenu page to edit Courses. The code is in the file wpcm_edit_courses.php
-	add_submenu_page( 'WPCM_top_options_page', __('WP Course Manager - Edit Courses'), __('Edit Courses'), 'manage_options', 'WPCM_edit_courses', 'WPCM_edit_courses');
+	add_submenu_page( 'WPCM_top_options_page', __('WP Course Manager - Edit Courses', 'wp-course-manager'), __('Edit Courses', 'wp-course-manager'), 'manage_options', 'WPCM_edit_courses', 'WPCM_edit_courses');
 	
 	//Submenu page to edit the schedule. The code is in the file wpcm_edit_schedule.php	
-	add_submenu_page( 'WPCM_top_options_page', __('WP Course Manager - Edit Schedule'), __('Edit Schedule'), 'manage_options', 'WPCM_edit_schedule', 'WPCM_edit_schedule');
+	add_submenu_page( 'WPCM_top_options_page', __('WP Course Manager - Edit Schedule', 'wp-course-manager'), __('Edit Schedule', 'wp-course-manager'), 'manage_options', 'WPCM_edit_schedule', 'WPCM_edit_schedule');
 }
 			
 
 function WPCM_plugin_options() {
 	if (!current_user_can('manage_options'))  {
-		wp_die( __('You do not have sufficient permissions to access this page.') );
+		wp_die( __('You do not have sufficient permissions to access this page.', 'wp-course-manager') );
 	}
 ?>
 <div class="WPCM_manager_wrap">
-	<h2><?PHP _e('WordPress Course Manager');?></h2>
+	<h2><?PHP _e('WordPress Course Manager', 'wp-course-manager');?></h2>
 
     <?PHP	
 	if (isset($_REQUEST['lecturer_page']) || isset($_REQUEST['course_page']) || isset($_REQUEST['schedule_page']) || isset($_REQUEST['registration_address']) )
@@ -48,31 +48,31 @@ function WPCM_plugin_options() {
 	
 	?>
     <div class="WPCM_options_plugin_content_instructions">
-        <h3><?PHP _e('Plugin content');?></h3>
-        <p><?PHP _e('To manage the plugin content, use the links under WP Course Manager in the menu to the left.');?></p>
+        <h3><?PHP _e('Plugin content', 'wp-course-manager');?></h3>
+        <p><?PHP _e('To manage the plugin content, use the links under WP Course Manager in the menu to the left.', 'wp-course-manager');?></p>
     </div>
     <div class="WPCM_options_plugn_setup_instructions">
-        <h3><?PHP _e('How to use the plugin');?></h3>
-        <p><?PHP _e('To set up the plugin to work as intended, you need to create three pages where the shortcodes will be placed.');?></p>
+        <h3><?PHP _e('How to use the plugin', 'wp-course-manager');?></h3>
+        <p><?PHP _e('To set up the plugin to work as intended, you need to create three pages where the shortcodes will be placed.', 'wp-course-manager');?></p>
    
         <ul>
-            <li><?PHP _e('One page lists all lecturers, and also displays detailed info about each lecturer. '); _e('Shortcode to put on that page:'); ?> [wpcm_lecturers]</li>
-            <li><?PHP _e('One page lists all courses, and also displays detailed info abou each course. '); _e('Shortcode to put on that page:');?> [wpcm_courses]</li>
-            <li><?PHP _e('One page lists the schedule, i.e. the dates for all planned course opportunities. '); _e('Shortcode to put on that page:');?> [wpcm_schedule]</li>
+            <li><?PHP _e('One page lists all lecturers, and also displays detailed info about each lecturer. ', 'wp-course-manager'); _e('Shortcode to put on that page:', 'wp-course-manager'); ?> [wpcm_lecturers]</li>
+            <li><?PHP _e('One page lists all courses, and also displays detailed info abou each course. ', 'wp-course-manager'); _e('Shortcode to put on that page:', 'wp-course-manager');?> [wpcm_courses]</li>
+            <li><?PHP _e('One page lists the schedule, i.e. the dates for all planned course opportunities. ', 'wp-course-manager'); _e('Shortcode to put on that page:', 'wp-course-manager');?> [wpcm_schedule]</li>
         </ul>
         <p>
-            <?PHP _e('')?>
+            <?PHP _e('', 'wp-course-manager')?>
         </p>
     </div>
     <div class="WPCM_options_section_1">
-        <h3><?PHP _e('Plugin settings');?></h3>
+        <h3><?PHP _e('Plugin settings', 'wp-course-manager');?></h3>
         <form id="wpcm_options" method="post" action="admin.php?page=<?PHP echo $_GET['page'];?>">
             <fieldset>
-                <legend><?PHP _e("Select the pages below that are used to display the plugin content.")?></legend>
+                <legend><?PHP _e("Select the pages below that are used to display the plugin content.", 'wp-course-manager')?></legend>
                 <p>
-                    <label><?PHP _e("Page that displays");?> <strong> <?PHP _e("lecturers");?></strong>: </label>
+                    <label><?PHP _e("Page that displays", 'wp-course-manager');?> <strong> <?PHP _e("lecturers", 'wp-course-manager');?></strong>: </label>
                     <select name="lecturer_page">
-                        <option value=""><?PHP _e("Select page");?></option>
+                        <option value=""><?PHP _e("Select page", 'wp-course-manager');?></option>
 	
                         <?PHP
                         $all_pages = get_pages();
@@ -86,12 +86,12 @@ function WPCM_plugin_options() {
                         ?>
                     </select>
                     <br/>
-                    <?PHP _e("This page should only contain this shortcode: ");?>[wpcm_lecturers]
+                    <?PHP _e("This page should only contain this shortcode: ", 'wp-course-manager');?>[wpcm_lecturers]
                 </p>
 	            <p>
-                    <label> <?PHP _e("Page that displays");?> <strong> <?PHP _e("courses")?></strong>: </label>
+                    <label> <?PHP _e("Page that displays", 'wp-course-manager');?> <strong> <?PHP _e("courses", 'wp-course-manager')?></strong>: </label>
                     <select name="course_page">
-                        <option value=""><?PHP _e("Select page");?></option>
+                        <option value=""><?PHP _e("Select page", 'wp-course-manager');?></option>
                         <?PHP
                             foreach ($all_pages as $page)
                             {
@@ -102,13 +102,13 @@ function WPCM_plugin_options() {
                             }
                         ?>
                     </select>
-                    <br/><?PHP _e("This page should only contain this shortcode: ");?>[wpcm_courses]
+                    <br/><?PHP _e("This page should only contain this shortcode: ", 'wp-course-manager');?>[wpcm_courses]
                 </p>
 
                 <p>
-                    <label><?PHP _e("Page that displays");?> <strong><?PHP _e("the schedule");?></strong>: </label>
+                    <label><?PHP _e("Page that displays", 'wp-course-manager');?> <strong><?PHP _e("the schedule", 'wp-course-manager');?></strong>: </label>
                     <select name="schedule_page">';
-                        <option value=""><?PHP _e("Select page");?></option>
+                        <option value=""><?PHP _e("Select page", 'wp-course-manager');?></option>
                         <?PHP
                             foreach ($all_pages as $page)
                             {
@@ -119,17 +119,17 @@ function WPCM_plugin_options() {
                             }
                         ?>
                     </select>
-                    <br/><?PHP _e("This page should only contain this shortcode: ");?>[wpcm_schedule]
+                    <br/><?PHP _e("This page should only contain this shortcode: ", 'wp-course-manager');?>[wpcm_schedule]
                 </p>
 
                 <p>
-                    <label><?PHP _e("E-mail address to be used when registering for a scheduled course event.");?></label>
+                    <label><?PHP _e("E-mail address to be used when registering for a scheduled course event.", 'wp-course-manager');?></label>
                     <input type="email" name="registration_address" value="<?PHP echo $registration_address; ?>" /><br/>
-                    <?PHP _e("Leave blank to disable the registration link in the event details."); ?>
+                    <?PHP _e("Leave blank to disable the registration link in the event details.", 'wp-course-manager'); ?>
                 </p>
 
                 <p>
-                    <button type="submit"><?PHP _e("Save");?></button>
+                    <button type="submit"><?PHP _e("Save", 'wp-course-manager');?></button>
                 </p>
 
             </fieldset>

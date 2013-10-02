@@ -58,17 +58,17 @@ function WPCM_show_one_lecturer($id) {
 	
 	$output .= "<h2>".$name."</h2>";		
 	$output .= "<div id='WPCM_lecturer_image'>";
-	$output .= "<img src='".$image."' alt='".__("Portrait of the lecturer")."' title='".$name."' />";
+	$output .= "<img src='".$image."' alt='".__("Portrait of the lecturer", 'wp-course-manager')."' title='".$name."' />";
 	$output .= "</div>";
 	$output .= "<p>";
 	$output .= $description;
 	$output .= "</p>";
 	$output .= "<div>";
-	$output .= __("Home page").": <a href='". $url ."' target='_blank' title='".$url."'>".$url."</a>";
+	$output .= __("Home page", 'wp-course-manager').": <a href='". $url ."' target='_blank' title='".$url."'>".$url."</a>";
 	$output .= "</div>";
 	
-	$output .= "<h3>".__("Courses")."</h3>";
-	$output .= "<p>" . $name . " " . __("holds the following courses:") ."</p>";
+	$output .= "<h3>".__("Courses", 'wp-course-manager')."</h3>";
+	$output .= "<p>" . $name . " " . __("holds the following courses:", 'wp-course-manager') ."</p>";
 	$output .= "<ul>";
 	
 	//$courses_page holds the short-hand url to the page where the shortcode for the courses is placed. 
@@ -147,7 +147,7 @@ function WPCM_show_one_course($id) {
 	$output .= "<div class='WPCM_course_ingress'><p>".$short_descr."</p></div>";
     
     $output .= "<div class='WPCM_course_dates'>";
-    $output .= "<h3>".__('Dates')."</h3>";
+    $output .= "<h3>".__('Dates', 'wp-course-manager')."</h3>";
 	$output .= "<ul>";
 	if (isset($dates[0]))
 	{
@@ -166,13 +166,13 @@ function WPCM_show_one_course($id) {
 	}
 	else
 	{
-		$output .= "<li>".__('No scheduled dates for this course')."</li>"; 	
+		$output .= "<li>".__('No scheduled dates for this course', 'wp-course-manager')."</li>"; 	
 	}
 	$output .= "</ul>";	
     $output .= "</div>";
     
 	$output .= "<div class='WPCM_course_lecturers'>";
-	$output .= "<h3>".__('Lecturers')."</h3>";
+	$output .= "<h3>".__('Lecturers', 'wp-course-manager')."</h3>";
 	
 	foreach ( $lecturers as $lecturer)
 	{
@@ -186,12 +186,12 @@ function WPCM_show_one_course($id) {
 	 
 	
 	$output .= "<div class='WPCM_course_description'>";
-    $output .= "<h3>".__('Description')."</h3>";
+    $output .= "<h3>".__('Description', 'wp-course-manager')."</h3>";
 	$output .= "<p>".$description."</p>";
     $output .= "</div>";
 
 	$output .= "<div class='WPCM_course_target'>";
-    $output .= "<h3>".__('Target group')."</h3>";	
+    $output .= "<h3>".__('Target group', 'wp-course-manager')."</h3>";	
 	$output .= "<p>".$target."</p>";
     $output .= "</div>";
 	
@@ -212,20 +212,20 @@ function WPCM_list_schedule($content=null){
     
     $output .= "<div id='WPCM_schedule_details'>";
     $output .= "<div id='WPCM_schedule_details_close_button'> </div>";
-    $output .= "<div id='WPCM_schedule_details_date'><h4>".__("Date")."</h4><p>1970-01-01</p></div>";
-    $output .= "<div id='WPCM_schedule_details_place'><h4>".__("City and venue")."</h4><p>Storstad, Grand hotell</div>";
+    $output .= "<div id='WPCM_schedule_details_date'><h4>".__("Date", 'wp-course-manager')."</h4><p>1970-01-01</p></div>";
+    $output .= "<div id='WPCM_schedule_details_place'><h4>".__("City and venue", 'wp-course-manager')."</h4><p>Storstad, Grand hotell</div>";
     $output .= "<h3 id='WPCM_schedule_details_title'>Course title</h3>";
     $output .= "<div id='WPCM_schedule_details_descr'><p>Course short description</p></div>";
     $output .= "<div id='WPCM_schedule_details_more_info'><p>";
-    $output .= __("More information about this event is ")."<a href='#'>".__("available here")."</a>";
+    $output .= __("More information about this event is ", 'wp-course-manager')."<a href='#'>".__("available here", 'wp-course-manager')."</a>";
     $output .= "</p></div>";
 
     if($registration_address !== '')
     {
-        $output .= "<div id='WPCM_schedule_details_register'><h3>".__("Register")."</h3>";
+        $output .= "<div id='WPCM_schedule_details_register'><h3>".__("Register", 'wp-course-manager')."</h3>";
         $output .= "<p>";
-        $output .= __("Register for this event by ");
-        $output .= "<a href='#'>".__("clicking here")."</a>.";
+        $output .= __("Register for this event by ", 'wp-course-manager');
+        $output .= "<a href='#'>".__("clicking here", 'wp-course-manager')."</a>.";
         $output .= "</p>";
         $output .= "</div>";
     }
@@ -235,7 +235,7 @@ function WPCM_list_schedule($content=null){
     
     $output .= "<table id='WPCM_schedule_table'>";
     $output .= "<thead><tr>";
-    $output .= "<th>".__('Date')."</th><th>".__('Title')."</th><th>".__('City')."</th>";
+    $output .= "<th>".__('Date', 'wp-course-manager')."</th><th>".__('Title', 'wp-course-manager')."</th><th>".__('City', 'wp-course-manager')."</th>";
     $output .= "</tr></thead>";
     $output .= "<tbody>";
     foreach ( $schedule as $event )
@@ -250,7 +250,7 @@ function WPCM_list_schedule($content=null){
         $output .= "data-eventcourseid='".$event->courses_id."' ";
         $output .= "data-eventcoursetitle='".$course[0]->title."' ";
         $output .= "data-eventcoursedescr='".$course[0]->short_description."' ";
-        $output .= "data-registrationurl='mailto:".$registration_address."?subject=".__("Registration for ").$course[0]->title.__(" in ").$event->city."' ";
+        $output .= "data-registrationurl='mailto:".$registration_address."?subject=".__("Registration for ", 'wp-course-manager').$course[0]->title.__(" in ", 'wp-course-manager').$event->city."' ";
         $output .= ">";
         $output .= "<td>";
         $output .= $event->date;
