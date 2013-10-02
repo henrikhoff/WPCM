@@ -36,7 +36,7 @@ function WPCM_plugin_options() {
 		update_option('wpcm_schedule_page',$schedule_page);
 		update_option('wpcm_registration_address',$registration_address);
 
-		echo '<p class="information">Options saved!</p>';
+		echo '<p class="wpcm_information">'.__('Options saved!','wp-course-manager').'</p>';
 
 	}
 
