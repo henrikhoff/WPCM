@@ -19,6 +19,10 @@ The plugin lets you manage:
 * Courses - Name, description, lecturers
 * Schedule - Course, date, place, url to page/file with more information.
 
+The plugin has very basic styling with css, relying mostly on the current theme to style things like typography, margins, paddings and so on. The plugin style is made to be responsive (works well on both small and big screens) and tested with the default 2013 theme.
+
+Javascript is required to be enabled in the browser for the schedule page to work
+
 This plugin was developed since I couldn't find any other plugin that provided this functionality, and I needed it for the home page of the Swedish educational company Utbildningsglädje (http://www.utbildningsgladje.nu).
 
 What I needed was to manage lecturers that can hold different courses and create a schedule with courses to be held at different locations.
@@ -47,9 +51,13 @@ I haven't received any questions yet...
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif)
-2. This is the second screen shot
+1. The plugin options page. This is where you tell the plugin what pages you have put the shortcodes in.
+2. Edit lecturer information.
+3. Manage the schedule. A new scheduled event has just been added.
+4. The schedule list on the page with the shortcode for listing the schedule. This is how the visitor to the site sees it.
+5. The schedule list with detailed information about one scheduled event.
+6. Information about a lecturer, on the page where the shortcode for showing lecturers is put.
+7. Information about a course, on the page where the shortcode for showing courses is put.
 
 == Changelog ==
 
@@ -63,6 +71,11 @@ the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1
 * Fixed issue where scripts and css didn't register correctly.
 * Added Swedish translation of plugin
 
+= 1.2 =
+* Lots of different small fixes, mostly concerning css and removing old debug outputs.
+* Added uninstall script that removes plugin options and DB tables when the plugin is removed through the Wordpress plugin manager.
+* Added plugin screenshots and a better description.
+
 == Upgrade Notice ==
 
-No specific upgrade info for version 1.1.
+No specific upgrade info for version 1.2.
