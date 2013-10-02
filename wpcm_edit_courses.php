@@ -8,7 +8,7 @@ function WPCM_edit_courses() {
 	if (!current_user_can('manage_options'))  {
 		wp_die( __('You do not have sufficient permissions to access this page.', 'wp-course-manager') );
 	}
-	echo '<div class="wrap">';
+	echo '<div class="wpcm_settings_wrap">';
 	
 	
 	$action = $_REQUEST['action'];
@@ -164,16 +164,14 @@ function remove_course($id) {
 	$c = get_courses($id);
 	$course = $c[0];	
 	
-	echo "<h2>".__('Deleting course ', 'wp-course-manager').stripslashes($course->title)."</h2>";
+	echo "<p>".__('Deleting course ', 'wp-course-manager').stripslashes($course->title)."</p>";
 	
 	
-	//Check if the course has scheduled events?	
+	//Check if the course has scheduled events?
+	//Now it just removes the course and all scheduled events with that course.
 	
 	delete_course($id);
-	
-	
-	echo '<p class="information">'.__('Done', 'wp-course-manager')."</p>";	
-	
+
 	list_all_courses();
 	
 }

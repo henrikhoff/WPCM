@@ -14,7 +14,7 @@ function WPCM_edit_schedule() {
 	$save = $_REQUEST['save'];
 	//echo "action &amp; id &amp; save: ".$action." ".$id." ".$save."</br>";
 
-	echo '<div class="wrap">';
+	echo '<div class="wpcm_settings_wrap">';
 
 	echo "<h1>".__('WP Course Manager', 'wp-course-manager')." - ".__('Manage Schedule', 'wp-course-manager')."</h1>";
 	
@@ -46,12 +46,10 @@ function remove_schedule($id){
 	$course = get_courses($event->courses_id);
 	$course_title = $course[0]->title;
 	
-	echo "<h2>".__('Deleting scheduled event for ', 'wp-course-manager')."<em>".$course_title."</em>, ".stripslashes($event->date)."</h2>";
+	echo "<p>".__('Deleting scheduled event for ', 'wp-course-manager')."<em>".$course_title."</em>, ".stripslashes($event->date)."</p>";
 	
 	delete_schedule($id);
-	
-	
-	echo '<p class="information">'.__('Done', 'wp-course-manager')."</p>";	
+
 	
 	list_all_schedule();
 	
@@ -138,7 +136,7 @@ function list_all_schedule($save=0) {
 	foreach ($schedule as $event){
 		$course = get_courses($event->courses_id);
 		$course_title = $course[0]->title; 
-		echo "<tr><td>$course_title</td><td>$event->date,&nbsp;</td><td>$event->city</td><td><a href=\"admin.php?page=".$_GET['page']."&amp;action=remove_schedule&amp;id=".$event->id."\">".__('Remove', 'wp-course-manager')."</a></td></tr>";
+		echo "<tr><td>$course_title</td><td>$event->date</td><td>$event->city</td><td><a href=\"admin.php?page=".$_GET['page']."&amp;action=remove_schedule&amp;id=".$event->id."\" onclick=\"return confirm('".__('Do you really want to delete the scheduled event?', 'wp-course-manager')."');\">".__('Remove', 'wp-course-manager')."</a></td></tr>";
 		
 		}
 	echo "</table>";

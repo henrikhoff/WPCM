@@ -14,7 +14,7 @@ function WPCM_edit_lecturers() {
 	$save = $_REQUEST['save'];
 	//echo "action &amp; id &amp; save: ".$action." ".$id." ".$save."</br>";
 
-	echo '<div class="WPCM_manager_wrap">';
+	echo '<div class="wpcm_settings_wrap">';
 
 	echo "<h1>".__('WP Course Manager', 'wp-course-manager')." - ".__('Manage Lecturers', 'wp-course-manager')."</h1>";
 	
@@ -120,15 +120,12 @@ function remove_lecturer($id) {
 	$l = get_lecturers($id);
 	$lecturer = $l[0];	
 	
-	echo "<h2>".__('Deleting Lecturer ', 'wp-course-manager').stripslashes($lecturer->name)."</h2>";
+	echo "<p>".__('Deleting Lecturer ', 'wp-course-manager').stripslashes($lecturer->name)."</p>";
 	
 	
 	//Check if the lecturer has scheduled courses?	
 	
 	delete_lecturer($id);
-	
-	
-	echo '<p class="information">'.__('Done', 'wp-course-manager')."</p>";	
 	
 	list_all_lecturers();
 	
