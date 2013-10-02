@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Course Manager 1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-course-manager\n"
-"POT-Creation-Date: 2013-10-02 20:01:02+00:00\n"
+"POT-Creation-Date: 2013-10-02 20:15:51+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -284,6 +284,10 @@ msgstr ""
 
 #: wpcm_plugin_options.php:24
 msgid "WordPress Course Manager"
+msgstr ""
+
+#: wpcm_plugin_options.php:39
+msgid "Options saved!"
 msgstr ""
 
 #: wpcm_plugin_options.php:51

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Course Manager\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-course-manager\n"
-"POT-Creation-Date: 2013-10-02 20:01:02+00:00\n"
-"PO-Revision-Date: 2013-10-02 22:06+0100\n"
+"POT-Creation-Date: 2013-10-02 20:15:51+00:00\n"
+"PO-Revision-Date: 2013-10-02 22:17+0100\n"
 "Last-Translator: Henrik Hoff <henrikln@gmail.com>\n"
 "Language-Team: Henrik Hoff <henrikln@gmail.com>\n"
 "Language: sv\n"
@@ -290,6 +290,10 @@ msgstr "Hantera Schema"
 #: wpcm_plugin_options.php:24
 msgid "WordPress Course Manager"
 msgstr "WordPress Course Manager"
+
+#: wpcm_plugin_options.php:39
+msgid "Options saved!"
+msgstr "Inställningar sparade!"
 
 #: wpcm_plugin_options.php:51
 msgid "Plugin content"
