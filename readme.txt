@@ -59,6 +59,10 @@ the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1
 * Basic administrative features, manage lecturers, courses and a schedule.
 * Show info about lecturers, courses and the schedule with shortcodes in pages.
 
+= 1.1 =
+* Fixed issue where scripts and css didn't register correctly.
+* Added Swedish translation of plugin
+
 == Upgrade Notice ==
 
-No upgrade info for version 1.0.
+No specific upgrade info for version 1.1.
