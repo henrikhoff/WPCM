@@ -10,12 +10,12 @@ $schedule_table_name = $wpdb->prefix . "wpcm_schedule";
 function print_status($result){
 		global $wpdb;		
 		if($result === FALSE) {
-			echo "<p class=\"error\">".__('It was not possible to perform the operation.')."</p>";
+			echo "<p class='wpcm_error'>".__('It was not possible to perform the operation.', 'wp-course-manager')."</p>";
 			$wpdb->print_error();
 		}
 		else
 		{
-			echo "<p class=\"information\">".__('The operation has been performed successfully.')."</p>";
+			echo "<p class='wpcm_information'>".__('The operation has been performed successfully.', 'wp-course-manager')."</p>";
 		}
 }
 
@@ -51,12 +51,12 @@ function set_lecturer($lecturer) {
 	$wpdb->show_errors();
 	
 	if ($lecturer[id]) {
-		echo '<p>Update!</p>';
+		//echo '<p>Update!</p>';
 		$result = $wpdb->update( $lecturer_table_name, $lecturer, array('id'=>$lecturer[id]), array( '%d', '%s', '%s','%s','%s') ,array( '%d' ));
 		$id = $lecturer[id];
 	}
 	else {
-		echo '<p>Insert!</p>';
+		//echo '<p>Insert!</p>';
 		$result = $wpdb->insert( $lecturer_table_name, $lecturer, array('%s', '%s','%s','%s'));
 		$id = $wpdb->insert_id;
 	}
@@ -127,12 +127,12 @@ function set_course($course, $lecturers) {
 	$wpdb->show_errors();
 	
 	if ($course[id]) {
-		echo '<p>Update!</p>';
+		//echo '<p>Update!</p>';
 		$result = $wpdb->update( $course_table_name, $course, array('id'=>$course[id]), array( '%d', '%s', '%s','%s','%s') ,array( '%d' ));
 		$id = $course[id];
 	}
 	else {
-		echo '<p>Insert!</p>';
+		//echo '<p>Insert!</p>';
 		$result = $wpdb->insert( $course_table_name, $course, array('%s', '%s','%s','%s'));
 		$id = $wpdb->insert_id;
 	}
@@ -278,12 +278,12 @@ function set_schedule($event) {
 	$wpdb->show_errors();
 	
 	if ($event[id]) {
-		echo '<p>Update!</p>';
+		//echo '<p>Update!</p>';
 		$result = $wpdb->update( $schedule_table_name, $event, array('id'=>$schedule[id]), array( '%d', '%d', '%s','%s','%s','%s') ,array( '%d' ));
 		$id = $course[id];
 	}
 	else {
-		echo '<p>Insert!</p>';
+		//echo '<p>Insert!</p>';
 		$result = $wpdb->insert( $schedule_table_name, $event, array('%d', '%s','%s','%s','%s'));
 		$id = $wpdb->insert_id;
 	}
