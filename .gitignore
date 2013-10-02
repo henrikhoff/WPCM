@@ -1,5 +1,5 @@
 # ignore auto save files
 *~
 /nbproject/private/
-/.idea/workspace.xml
+/.idea/
 utbildni_uge.sql
