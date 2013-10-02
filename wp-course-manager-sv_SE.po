@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-10-02 11:15+0100\n"
+"PO-Revision-Date: 2013-10-02 20:54+0100\n"
 "Last-Translator: Henrik Hoff <henrikln@gmail.com>\n"
 "Language-Team: Henrik Hoff <henrikln@gmail.com>\n"
 "X-Generator: Poedit 1.5.4\n"
@@ -322,7 +322,7 @@ msgid ""
 "lecturer. "
 msgstr ""
 "En sida ska lista alla föreläsare, och även visa detaljerad information om "
-"varje föreläsare."
+"varje föreläsare. "
 
 #: wpcm_plugin_options.php:59 wpcm_plugin_options.php:60
 #: wpcm_plugin_options.php:61
@@ -335,14 +335,14 @@ msgid ""
 "course. "
 msgstr ""
 "En sida ska lista alla kurser, och även visa detaljerad information om varje "
-"kurs."
+"kurs. "
 
 #: wpcm_plugin_options.php:61
 msgid ""
 "One page lists the schedule, i.e. the dates for all planned course "
 "opportunities. "
 msgstr ""
-"En sida ska visa schemat, dvs datumen för alla schemalagda kurstillfällen."
+"En sida ska visa schemat, dvs datumen för alla schemalagda kurstillfällen. "
 
 #: wpcm_plugin_options.php:68
 msgid "Plugin settings"
@@ -378,7 +378,7 @@ msgstr "kurser"
 
 #: wpcm_plugin_options.php:109
 msgid "the schedule"
-msgstr "chemat"
+msgstr "schemat"
 
 #: wpcm_plugin_options.php:126
 msgid ""
