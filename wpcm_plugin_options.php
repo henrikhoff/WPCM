@@ -20,7 +20,7 @@ function WPCM_plugin_options() {
 		wp_die( __('You do not have sufficient permissions to access this page.', 'wp-course-manager') );
 	}
 ?>
-<div class="WPCM_manager_wrap">
+<div class="wpcm_settings_wrap">
 	<h2><?PHP _e('WordPress Course Manager', 'wp-course-manager');?></h2>
 
     <?PHP	
