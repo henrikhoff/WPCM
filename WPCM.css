@@ -109,6 +109,31 @@ th.headerSortDown {
     float: left;
 }
 
+.wpcm_settings_wrap table td {
+    padding-right: 2em;
+}
+
+.wpcm_information, .wpcm_error {
+    padding: 1em;
+    margin: 1em 0;
+    width: 300px;
+    border: 3px solid;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    color: black;
+}
+
+.wpcm_error {
+    border-color: #aa0000;
+    background-color: #faf0f0;
+}
+
+.wpcm_information {
+    border-color: #00aa00;
+    background-color: #f0faf0;
+}
+
 @media (max-width: 600px) {
     .WPCM_course_dates {
         float: none;

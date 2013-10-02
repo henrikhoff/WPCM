@@ -72,8 +72,9 @@ function register_plugin_styles() {
 	wp_enqueue_style( 'WPCM_css' );
 }
 
-// Register style sheet.
+// Register style sheet for plugin front-end and admin.
 add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
+add_action( 'admin_enqueue_scripts', 'register_plugin_styles' );
 
 //Plugin Settings and Administration	
 add_action('admin_menu', 'WPCM_options_menu');
