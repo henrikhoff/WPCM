@@ -151,7 +151,8 @@ function WPCM_plugin_options() {
 							<label><?PHP _e('Set how dates should be displayed for the site visitors.','wp-course-manager');?></label>
 							<input type="text" name="date_display_setting" value="<?PHP echo $date_display_setting; ?>" /><br/>
 							<?PHP _e('Default value: Y-m-d (2014-01-31). If you save with this value empty, it will revert to the default value.','wp-course-manager');?><br/>
-							<?PHP _e('Use PHP date format codes, as documented in ','wp-course-manager');?><a href="http://php.net/manual/en/function.date.php" target="_blank" title="PHP date documentation"><?PHP _e('the PHP manual for the date function','wp-course-manager');?></a>.
+							<?PHP _e('Use PHP date format codes, as documented in ','wp-course-manager');?><a href="http://php.net/manual/en/function.date.php" target="_blank" title="PHP date documentation"><?PHP _e('the PHP manual for the date function','wp-course-manager');?></a>.<br/>
+							<?PHP _e('The plugin does not make a sanity check on the format codes entered in this setting, please use it carefully.','wp-course-manager');?>
 					</p>
 
                 <p>
