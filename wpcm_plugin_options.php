@@ -30,11 +30,16 @@ function WPCM_plugin_options() {
 		$course_page = $_REQUEST['course_page'];
 		$schedule_page = $_REQUEST['schedule_page'];
 		$registration_address =  $_REQUEST['registration_address'];
+		$date_display_setting = $_REQUEST['date_display_setting'];
+		if ( $date_display_setting == '' )
+			$date_display_setting = 'Y-m-d';
+
 
 		update_option('wpcm_lecturer_page',$lecturer_page);
 		update_option('wpcm_course_page',$course_page);
 		update_option('wpcm_schedule_page',$schedule_page);
 		update_option('wpcm_registration_address',$registration_address);
+		update_option('wpcm_date_display_setting',$date_display_setting);
 
 		echo '<p class="wpcm_information">'.__('Options saved!','wp-course-manager').'</p>';
 
@@ -45,6 +50,16 @@ function WPCM_plugin_options() {
 	$course_page = get_option('wpcm_course_page');
 	$schedule_page = get_option('wpcm_schedule_page');
 	$registration_address = get_option('wpcm_registration_address');
+	$date_display_setting = get_option('wpcm_date_display_setting');
+	
+	//Make sure that we have the date display setting set
+	//should be unnecessary, but might be needed after plugin upgrade.
+	if ( $date_display_setting == '' )
+	{
+		update_option('wpcm_date_display_setting','Y-m-d');		
+		$date_display_setting = 'Y-m-d';
+	}
+
 	
 	?>
     <div class="WPCM_options_plugin_content_instructions">
@@ -66,6 +81,7 @@ function WPCM_plugin_options() {
     </div>
     <div class="WPCM_options_section_1">
         <h3><?PHP _e('Plugin settings', 'wp-course-manager');?></h3>
+        <h4><?PHP _e('Pages to use', 'wp-course-manager');?></h4>
         <form id="wpcm_options" method="post" action="admin.php?page=<?PHP echo $_GET['page'];?>">
             <fieldset>
                 <legend><?PHP _e("Select the pages below that are used to display the plugin content.", 'wp-course-manager')?></legend>
@@ -122,11 +138,21 @@ function WPCM_plugin_options() {
                     <br/><?PHP _e("This page should only contain this shortcode: ", 'wp-course-manager');?>[wpcm_schedule]
                 </p>
 
+
+					<h4><?PHP _e('Registration e-mail address','wp-course-manager');?></h4>
                 <p>
                     <label><?PHP _e("E-mail address to be used when registering for a scheduled course event.", 'wp-course-manager');?></label>
                     <input type="email" name="registration_address" value="<?PHP echo $registration_address; ?>" /><br/>
                     <?PHP _e("Leave blank to disable the registration link in the event details.", 'wp-course-manager'); ?>
                 </p>
+
+					<h4><?PHP _e('Date display setting','wp-course-manager');?></h4>
+					<p>
+							<label><?PHP _e('Set how dates should be displayed for the site visitors.','wp-course-manager');?></label>
+							<input type="text" name="date_display_setting" value="<?PHP echo $date_display_setting; ?>" /><br/>
+							<?PHP _e('Default value: Y-m-d (2014-01-31). If you save with this value empty, it will revert to the default value.','wp-course-manager');?><br/>
+							<?PHP _e('Use PHP date format codes, as documented in ','wp-course-manager');?><a href="http://php.net/manual/en/function.date.php" target="_blank" title="PHP date documentation"><?PHP _e('the PHP manual for the date function','wp-course-manager');?></a>.
+					</p>
 
                 <p>
                     <button type="submit"><?PHP _e("Save", 'wp-course-manager');?></button>

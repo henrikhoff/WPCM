@@ -2,6 +2,8 @@
 
 function wpcm_install () {
 	global $wpdb;
+	
+	update_option('wpcm_date_display_setting','Y-m-d');
 
 	$table_name_1 = $wpdb->prefix . "wpcm_lecturers";
 	$table_name_2 = $wpdb->prefix . "wpcm_courses";
