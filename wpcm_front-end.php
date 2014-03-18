@@ -253,6 +253,11 @@ function WPCM_list_schedule($content=null){
         $output .= "data-registrationurl='mailto:".$registration_address."?subject=".__("Registration for ", 'wp-course-manager').$course[0]->title.__(" in ", 'wp-course-manager').$event->city."' ";
         $output .= ">";
         $output .= "<td>";
+        //"Ugly" fix to make sure the javascript tablesorter works for the date,
+        //since it requires specially written parsers for each date format to be used
+        //and I don't know what date format the blog admins choose.
+        //This makes the table sort on the hidden date within the <span> tag.
+        $output .= "<span style='display: none;'>".$event->date_original." </span>";
         $output .= $event->date;
         $output .= "</td>";
         $output .= "<td>";

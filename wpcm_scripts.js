@@ -1,6 +1,6 @@
 jQuery(document).ready(function() 
     { 
-        jQuery("#WPCM_schedule_table").tablesorter({ sortList: [[0,0]] }); 
+        jQuery("#WPCM_schedule_table").tablesorter({ sortList: [[0,0]], headers: { 0: {sorter:"text"} }});
 
         
         jQuery( "#WPCM_schedule_details_close_button" ).on( "click", function() {

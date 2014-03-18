@@ -235,7 +235,24 @@ function get_schedule($course_id="future"){
 	$result = $wpdb->get_results($query);
 	//echo $query;	
 	//print_r($result);
-	return $result;
+
+    //The blog admin/editor can set how the date will be displayed to the end users
+    //This is done in wpcm_plugin_options.php
+    //Here we will get that setting and change the date format to whatever the admin has set.
+    //If there, for any reason, is no such option set, we will use te default value 'Y-m-d'
+
+    $date_display_setting = get_option('wpcm_date_display_setting');
+    if ( $date_display_setting == '' )
+        $date_display_setting = 'Y-m-d';
+
+    foreach($result as $event)
+    {
+        $event->date_original = $event->date;
+        $event->date = date($date_display_setting,strtotime($event->date));
+    }
+
+
+    return $result;
 	
 	}
 	
