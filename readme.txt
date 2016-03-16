@@ -3,8 +3,8 @@ Contributors: henrikhoff
 Donate link: https://github.com/henrikhoff/WPCM
 Tags: course, schedule, education, event, events, teacher, lecture, lecturer
 Requires at least: 3.0.0
-Tested up to: 3.6.1
-Stable tag: 1.2
+Tested up to: 4.4.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,9 @@ I haven't received any questions yet...
 * Added uninstall script that removes plugin options and DB tables when the plugin is removed through the Wordpress plugin manager.
 * Added plugin screenshots and a better description.
 
+= 1.3 =
+* Added setting to specify the Date format to use for the schedule.
+
 == Upgrade Notice ==
 
-No specific upgrade info for version 1.2.
+No specific upgrade info for version 1.3.
