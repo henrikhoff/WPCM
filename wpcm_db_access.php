@@ -50,10 +50,10 @@ function set_lecturer($lecturer) {
 	global $lecturer_table_name;
 	$wpdb->show_errors();
 	
-	if ($lecturer[id]) {
+	if ($lecturer['id']) {
 		//echo '<p>Update!</p>';
-		$result = $wpdb->update( $lecturer_table_name, $lecturer, array('id'=>$lecturer[id]), array( '%d', '%s', '%s','%s','%s') ,array( '%d' ));
-		$id = $lecturer[id];
+		$result = $wpdb->update( $lecturer_table_name, $lecturer, array('id'=>$lecturer['id']), array( '%d', '%s', '%s','%s','%s') ,array( '%d' ));
+		$id = $lecturer['id'];
 	}
 	else {
 		//echo '<p>Insert!</p>';
@@ -116,9 +116,9 @@ function get_courses($id="all") {
 function set_course($course, $lecturers) {
 	//echo "Data: ";	
 	//print_r($course);
-	//echo $course[title].$course[id];	
+	//echo $course[title].$course['id'];	
 	
-	//print_r(array('id'=>$course[id]));	
+	//print_r(array('id'=>$course['id']));	
 		
 	global $wpdb;
 	global $course_table_name;
@@ -126,10 +126,10 @@ function set_course($course, $lecturers) {
 	
 	$wpdb->show_errors();
 	
-	if ($course[id]) {
+	if ($course['id']) {
 		//echo '<p>Update!</p>';
-		$result = $wpdb->update( $course_table_name, $course, array('id'=>$course[id]), array( '%d', '%s', '%s','%s','%s') ,array( '%d' ));
-		$id = $course[id];
+		$result = $wpdb->update( $course_table_name, $course, array('id'=>$course['id']), array( '%d', '%s', '%s','%s','%s') ,array( '%d' ));
+		$id = $course['id'];
 	}
 	else {
 		//echo '<p>Insert!</p>';
@@ -294,10 +294,10 @@ function set_schedule($event) {
 	
 	$wpdb->show_errors();
 	
-	if ($event[id]) {
+	if ($event['id']) {
 		//echo '<p>Update!</p>';
-		$result = $wpdb->update( $schedule_table_name, $event, array('id'=>$schedule[id]), array( '%d', '%d', '%s','%s','%s','%s') ,array( '%d' ));
-		$id = $course[id];
+		$result = $wpdb->update( $schedule_table_name, $event, array('id'=>$schedule['id']), array( '%d', '%d', '%s','%s','%s','%s') ,array( '%d' ));
+		$id = $course['id'];
 	}
 	else {
 		//echo '<p>Insert!</p>';
